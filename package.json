@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/codentity/codentity-registry",
   "dependencies": {
+    "boom": "^3.1.2",
     "hapi": "^8.4.0",
     "nodemon": "^1.9.1",
     "request": "^2.64.0",
