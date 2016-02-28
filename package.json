@@ -1,0 +1,32 @@
+{
+  "name": "codentity-registry",
+  "version": "0.1.0",
+  "description": "Package registry for Codentity",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo 'No tests yet...'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codentity/codentity-registry"
+  },
+  "author": "Jack Stevens <jack@applyr.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codentity/codentity-registry/issues"
+  },
+  "homepage": "https://github.com/codentity/codentity-registry",
+  "dependencies": {
+    "hapi": "^8.4.0",
+    "nodemon": "^1.9.1",
+    "request": "^2.64.0",
+    "semver": "^5.1.0"
+  },
+  "devDependencies": {
+    "semistandard": "^7.0.5"
+  },
+  "engines": {
+    "node": "4.x"
+  },
+  "codentityVersion": ">=0.1.0"
+}
