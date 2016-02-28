@@ -2,7 +2,7 @@
 
 const Boom = require('boom');
 const semver = require('semver');
-const codentityVersion = require('../package');
+const codentityVersion = require('../package').codentityVersion;
 
 function register (server, options, next) {
   server.ext('onRequest', function (request, reply) {
@@ -11,6 +11,7 @@ function register (server, options, next) {
       let msg = `Invalid Codentity version: ${version}`;
       return reply(Boom.badRequest(msg));
     }
+    console.log(codentityVersion);
     if (!semver.satisfies(version, codentityVersion)) {
       let msg = 'Deprecated Codentity version. Please upgrade using `npm update -g codentity`';
       return reply(Boom.badRequest(msg));
