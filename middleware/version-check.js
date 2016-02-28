@@ -6,7 +6,7 @@ const codentityVersion = require('../package').codentityVersion;
 
 function register (server, options, next) {
   server.ext('onRequest', function (request, reply) {
-    const version = request.headers.version;
+    const version = request.headers['x-codentity-version'];
     if (!semver.valid(version)) {
       let msg = `Invalid Codentity version: ${version}`;
       return reply(Boom.badRequest(msg));
