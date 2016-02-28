@@ -18,10 +18,24 @@ module.exports = {
     .catch(handleError(reply));
   },
   list: function (request, reply) {
-    console.log(request.headers);
     let github = getGithubInstance(request);
     github.getPackages()
     .then(function (packages) {
+      if (request.query.format === 'lite') {
+        return packages.map((pkg) => {
+          return {
+            id: pkg.id,
+            bower: pkg.bower,
+            npm: pkg.npm,
+            file: pkg.file,
+            gem: pkg.gem,
+            pip: pkg.pip,
+            composer: pkg.composer
+          };
+        });
+      }
+      return packages;
+    }).then((packages) => {
       reply(packages)
       .header('total-items', packages.length);
     })
